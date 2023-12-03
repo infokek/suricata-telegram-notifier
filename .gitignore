@@ -1,0 +1,8 @@
+rules/*
+logs/*
+!logs/.gitkeep
+!rules/.gitkeep
+.venv
+venv
+configs/service.ini
+service/__pycache__
