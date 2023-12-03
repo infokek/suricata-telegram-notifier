@@ -1,3 +1,5 @@
+#!/usr/bin/bash
+
 function checkRoot {
   if [ "$EUID" -ne 0 ]
     then echo "[!] Please run as root or sudo"

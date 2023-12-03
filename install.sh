@@ -1,3 +1,5 @@
+#!/usr/bin/bash
+
 function checkRoot {
   if [ "$EUID" -ne 0 ]
     then echo "[!] Please run as root or sudo"
@@ -14,7 +16,8 @@ function addService {
 
   [Service]
   Type=simple
-  Restart=always
+  Restart=on-failure
+  KillMode=control-group
   RestartSec=3
   User=root
   ExecStart=$SERVICE_DIRECTORY/.venv/bin/python3 -m service

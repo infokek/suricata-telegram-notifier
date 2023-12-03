@@ -5,6 +5,7 @@ def main() -> None:
     suricata = Suricata()
     checker = Checker()
     try:
+        # kill old suricata instance (if exists) to prevent fork bomb
         suricata.kill_suricata()
         suricata_process = suricata.start_suricata()
         checker.start_checker()        

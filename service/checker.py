@@ -14,6 +14,7 @@ class Checker():
 
 
     def _send_message(self, message) -> str | None:
+        """Send message to telegram bot"""
         response = requests.get(url=f'https://api.telegram.org/bot{config.BOT_TOKEN}/sendMessage?chat_id={config.CHAT_ID}&text={message}&parse_mode=HTML').json()
         return response
 
